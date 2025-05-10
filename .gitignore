@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Variables de entorno
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operativo
+.DS_Store         # macOS
+Thumbs.db         # Windows
+
+# IDEs / Editores
+.vscode/
+.idea/
+
+# Build / coverage (si usas herramientas de testing o empaquetado)
+dist/
+coverage/
+
+# Otros
+*.local
+*.swp
+
