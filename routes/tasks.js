@@ -3,10 +3,15 @@ var router = express.Router();
 const mongoose = require('mongoose');
 
 const taskInit = mongoose.model('task',{
+    /*id : String,
     name: String,
     description: String,
     dueDate: String,
-}, 'tasks')
+}, 'tasks')*/
+name: { type: String, required: true },
+  description: { type: String, required: true },
+  dueDate: { type: String, required: true } 
+}, 'tasks');
 
 
 router.get('/getTasks', function(req, res, next) {
@@ -20,6 +25,7 @@ router.get('/getTasks', function(req, res, next) {
 
 router.post('/addTask', function(req, res, next) {
     if (req.body && req.body.name && req.body.description && req.body.dueDate) {
+        delete req.body._id;
         const task = new taskInit(req.body);
         task.save()
             .then(() => {
